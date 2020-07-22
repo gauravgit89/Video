@@ -1,31 +1,23 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Video Chat</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"/>
-        
-    </head>
-    <body>
 
-        <div class="container-fluid">
-            <div class="row h-100 w-100">
-                <div class="col-12 col-sm-6 d-flex justify-content-center">
-                    <div class="embed-responsive embed-responsive-16by9">
-                        <video class="embed-responsive-item" muted></video>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-6 d-flex justify-content-center">
-                    <div id="peerDiv" class="embed-responsive embed-responsive-16by9">
-                      
-                    </div>
-                </div>
-            </div>
-        </div>
-    
-        <script src = "/socket.io/socket.io.js"></script>
-        <script src="bundle.js"></script>
-    </body>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Web RTC</title>
+</head>
+<body>
+    <h1>Video Conference</h1>
+    <div id="selectRoom">
+        <label>Room number</label>
+        <input id="roomNumber" type="text"/>
+        <button id="goRoom">Go</button>
+    </div>
+    <div id="consultingRoom" style="display:none">
+        <video id="localVideo" autoplay></video>
+        <video id="remoteVideo" autoplay></video>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="client.js"></script>
+    <script src="bundle.js"></script>
+</body>
 </html>

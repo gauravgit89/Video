@@ -11,6 +11,10 @@ console.log("335");
 io.on("connection", function(socket){
     console.log("336");
     socket.on("NewClient", function(){
+        this.emit("CreatePeer");
+
+
+
         if(clients < 3){
             console.log("CreatePeer 1");
             console.log(clients);
